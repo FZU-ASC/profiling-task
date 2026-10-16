@@ -1,0 +1,10 @@
+.venv/
+.tools/
+build/
+results/
+__pycache__/
+*.pyc
+*.perf
+perf.data*
+flamegraph.svg
+.DS_Store
