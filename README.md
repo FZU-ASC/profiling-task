@@ -160,4 +160,4 @@ OUTPUT_DIR="$PWD/results/flamegraph-multi-bins12" bash scripts/profile_cpp.sh mu
 
 - [PyTorch Profiler 教程](https://docs.pytorch.org/tutorials/recipes/recipes/profiler_recipe.html)、[API](https://docs.pytorch.org/docs/stable/profiler.html)。CPU total 包含子调用；Self CPU 排名不能替代 GPU 排名。模型和设备预热在正式采集前完成。
 - [flamegraph 官方仓库](https://github.com/flamegraph-rs/flamegraph)。默认 `-O2 -g`、保留帧指针并禁用尾调用消除；关键教学函数保留调用边界，便于读图。这些构建设置也属于实验条件。
-- 四部分的 WSL 实际验证记录见 [VALIDATION.md](VALIDATION.md)。GitHub Actions 配置了 Linux/macOS 数值与 trace 自检；perf/xctrace 采样在具备权限的实际系统上单独验证。
+- GitHub Actions 配置了 Linux/macOS 数值与 trace 自检；perf/xctrace 采样在具备权限的实际系统上单独验证。

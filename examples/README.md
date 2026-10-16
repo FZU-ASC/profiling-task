@@ -1,6 +1,6 @@
 # 两份实际生成的火焰图
 
-在WSL/Linux中使用默认程序参数、flamegraph 0.6.14和CPU-clock采样生成，具体环境见[验证记录](../VALIDATION.md)。
+在WSL/Linux中使用默认程序参数、flamegraph 0.6.14和CPU-clock采样生成。
 
 - [单文件矩阵乘法](flamegraph-single.svg)：重点找`main → multiply`。
 - [多文件信号流水线](flamegraph-multi.svg)：重点找`run_pipeline → run_round → extract_features → spectral_features`。
