@@ -70,6 +70,8 @@ WSL 的 perf 必须适配实际 Linux 内核。遇到 `linux-tools-$(uname -r)` 
 
 如果 perf 能 record 却在 script/report 阶段报 `incompatible file format`，检查 `perf version --build-options`。过度精简、缺少 ELF/栈展开支持的构建可能无法处理结果，应换用具备所需支持的 perf，再验证能否采集和读回；不要只检查版本号。临时使用另一份 perf 时可用环境变量 `PERF=/实际路径/perf` 指定，flamegraph 与采集脚本会沿用它。
 
+采集脚本优先查找项目本地的 `.tools/bin`（若存在），再使用系统 PATH；也可用 `FLAMEGRAPH=/实际路径/flamegraph` 指定工具。这些本地工具不提交到仓库，克隆后仍需按上述说明安装自己的依赖。
+
 ## OK，Let's begin！
 
 ### 先做一个小规模自检
