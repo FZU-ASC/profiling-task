@@ -137,25 +137,6 @@ OUTPUT_DIR="$PWD/results/flamegraph-multi-bins12" bash scripts/profile_cpp.sh mu
 
 **本阶段不要求优化成功。** 如果尝试优化，必须保留正确性检查，并在关闭 profiler 后独立、重复测量性能。`profiled_wall_seconds` 和采集过程中的 `wall_seconds` 都带有采集开销，不能直接当成最终 benchmark。
 
-## 最后，把你的发现讲给别人听
-
-将代码改动、运行命令和分析记录放进自己的学习仓库。可复制 [报告提纲](REPORT_TEMPLATE.md)，每个实验一小节：
-
-1. 你跑了什么：环境、代码版本、参数、构建方式和采集命令。
-2. 你看到了什么：主要热点、具体指标、原始 trace / SVG 和对应源码位置。
-3. 多文件版比单文件版多出了哪些实际阶段？选一条嵌套路径解释各层职责。
-4. 对照实验改了什么，观察到什么，哪些解释仍然只是猜测。
-
-原始文件较大时可以提供可访问的下载链接，不必把 `perf.data` 等大文件直接塞进 Git。提交到团队的具体位置与时间以后续通知为准，不要往第一个任务的 `PR-test` 仓库里塞这次的全部代码和采集文件。
-
-- [ ] 我在 Linux / macOS 中完成了实验，并记录了具体环境。
-- [ ] 我完成了所选路线的单文件与多文件两部分，原始结果可以打开。
-- [ ] 我能结合源码解释多文件任务中的一条实际嵌套调用路径。
-- [ ] 我做了一次只改变一个条件的对照实验。
-- [ ] 另一位同学可以按我的记录复现。
-
-到这里，我们开始从“让程序跑起来”，走向“理解程序怎样跑”。先把你的第一份性能分析做出来。See you in the profile！~
-
 ## 工具参考与验证范围
 
 - [PyTorch Profiler 教程](https://docs.pytorch.org/tutorials/recipes/recipes/profiler_recipe.html)、[API](https://docs.pytorch.org/docs/stable/profiler.html)。CPU total 包含子调用；Self CPU 排名不能替代 GPU 排名。模型和设备预热在正式采集前完成。
